@@ -1,11 +1,11 @@
-id;placed_date;status;code
-1;2019-10-06T14:06:42;COMPLETED;Soap Tasty Metal Sausages Outdoors
-2;2019-10-06T22:27:20;PENDING;North Carolina Granite
-3;2019-10-06T17:02:43;CANCELLED;Branding Dynamic black
-4;2019-10-07T10:50:58;PENDING;Ergonomic Rubber Chicken
-5;2019-10-07T04:26:12;COMPLETED;quantifying Garden
-6;2019-10-06T16:58:01;PENDING;Solomon Islands Dollar
-7;2019-10-07T04:09:14;CANCELLED;intermediate Table quantify
-8;2019-10-06T17:09:01;PENDING;Robust Louisiana
-9;2019-10-06T15:42:12;PENDING;compress Fantastic Global
-10;2019-10-07T00:23:17;PENDING;Fantastic Small Frozen Salad bypassing
+id;placed_date;status;code;customer_id
+1;2019-10-07T10:40:35;CANCELLED;Plastic South Georgia and the South Sandwich Islands;1
+2;2019-10-06T22:12:10;PENDING;Club backing up;2
+3;2019-10-07T12:01:02;PENDING;panel;3
+4;2019-10-06T17:15:44;CANCELLED;content;4
+5;2019-10-06T22:49:32;COMPLETED;Brand;5
+6;2019-10-06T20:37:08;COMPLETED;Corporate;6
+7;2019-10-07T06:03:57;PENDING;microchip;7
+8;2019-10-07T00:50:16;COMPLETED;e-markets system;8
+9;2019-10-07T15:32:14;COMPLETED;hack;9
+10;2019-10-07T16:20:13;PENDING;Developer Shoes Music;10

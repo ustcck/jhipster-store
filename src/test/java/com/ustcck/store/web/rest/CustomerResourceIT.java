@@ -2,6 +2,7 @@ package com.ustcck.store.web.rest;
 
 import com.ustcck.store.StoreApp;
 import com.ustcck.store.domain.Customer;
+import com.ustcck.store.domain.User;
 import com.ustcck.store.repository.CustomerRepository;
 import com.ustcck.store.service.CustomerService;
 import com.ustcck.store.web.rest.errors.ExceptionTranslator;
@@ -116,6 +117,11 @@ public class CustomerResourceIT {
             .addressLine2(DEFAULT_ADDRESS_LINE_2)
             .city(DEFAULT_CITY)
             .country(DEFAULT_COUNTRY);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        customer.setUser(user);
         return customer;
     }
     /**
@@ -135,6 +141,11 @@ public class CustomerResourceIT {
             .addressLine2(UPDATED_ADDRESS_LINE_2)
             .city(UPDATED_CITY)
             .country(UPDATED_COUNTRY);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        customer.setUser(user);
         return customer;
     }
 

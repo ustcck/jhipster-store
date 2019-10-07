@@ -3,7 +3,7 @@ import { browser, ExpectedConditions as ec, protractor, promise } from 'protract
 import { NavBarPage, SignInPage } from '../../page-objects/jhi-page-objects';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { InvoiceComponentsPage, InvoiceDeleteDialog, InvoiceUpdatePage } from './invoice.page-object';
+import { InvoiceComponentsPage, /* InvoiceDeleteDialog, */ InvoiceUpdatePage } from './invoice.page-object';
 
 const expect = chai.expect;
 
@@ -12,7 +12,7 @@ describe('Invoice e2e test', () => {
   let signInPage: SignInPage;
   let invoiceUpdatePage: InvoiceUpdatePage;
   let invoiceComponentsPage: InvoiceComponentsPage;
-  let invoiceDeleteDialog: InvoiceDeleteDialog;
+  /* let invoiceDeleteDialog: InvoiceDeleteDialog; */
 
   before(async () => {
     await browser.get('/');
@@ -36,42 +36,40 @@ describe('Invoice e2e test', () => {
     await invoiceUpdatePage.cancel();
   });
 
-  it('should create and save Invoices', async () => {
-    const nbButtonsBeforeCreate = await invoiceComponentsPage.countDeleteButtons();
+  /*  it('should create and save Invoices', async () => {
+        const nbButtonsBeforeCreate = await invoiceComponentsPage.countDeleteButtons();
 
-    await invoiceComponentsPage.clickOnCreateButton();
-    await promise.all([
-      invoiceUpdatePage.setDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      invoiceUpdatePage.setDetailsInput('details'),
-      invoiceUpdatePage.statusSelectLastOption(),
-      invoiceUpdatePage.paymentMethodSelectLastOption(),
-      invoiceUpdatePage.setPaymentDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      invoiceUpdatePage.setPaymentAmountInput('5'),
-      invoiceUpdatePage.orderSelectLastOption()
-    ]);
-    expect(await invoiceUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2000-12-31');
-    expect(await invoiceUpdatePage.getDetailsInput()).to.eq('details', 'Expected Details value to be equals to details');
-    expect(await invoiceUpdatePage.getPaymentDateInput()).to.contain(
-      '2001-01-01T02:30',
-      'Expected paymentDate value to be equals to 2000-12-31'
-    );
-    expect(await invoiceUpdatePage.getPaymentAmountInput()).to.eq('5', 'Expected paymentAmount value to be equals to 5');
-    await invoiceUpdatePage.save();
-    expect(await invoiceUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
+        await invoiceComponentsPage.clickOnCreateButton();
+        await promise.all([
+            invoiceUpdatePage.setDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            invoiceUpdatePage.setDetailsInput('details'),
+            invoiceUpdatePage.statusSelectLastOption(),
+            invoiceUpdatePage.paymentMethodSelectLastOption(),
+            invoiceUpdatePage.setPaymentDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            invoiceUpdatePage.setPaymentAmountInput('5'),
+            invoiceUpdatePage.orderSelectLastOption(),
+        ]);
+        expect(await invoiceUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2000-12-31');
+        expect(await invoiceUpdatePage.getDetailsInput()).to.eq('details', 'Expected Details value to be equals to details');
+        expect(await invoiceUpdatePage.getPaymentDateInput()).to.contain('2001-01-01T02:30', 'Expected paymentDate value to be equals to 2000-12-31');
+        expect(await invoiceUpdatePage.getPaymentAmountInput()).to.eq('5', 'Expected paymentAmount value to be equals to 5');
+        await invoiceUpdatePage.save();
+        expect(await invoiceUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 
-    expect(await invoiceComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
-  });
+        expect(await invoiceComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
+    }); */
 
-  it('should delete last Invoice', async () => {
-    const nbButtonsBeforeDelete = await invoiceComponentsPage.countDeleteButtons();
-    await invoiceComponentsPage.clickOnLastDeleteButton();
+  /*  it('should delete last Invoice', async () => {
+        const nbButtonsBeforeDelete = await invoiceComponentsPage.countDeleteButtons();
+        await invoiceComponentsPage.clickOnLastDeleteButton();
 
-    invoiceDeleteDialog = new InvoiceDeleteDialog();
-    expect(await invoiceDeleteDialog.getDialogTitle()).to.eq('storeApp.invoice.delete.question');
-    await invoiceDeleteDialog.clickOnConfirmButton();
+        invoiceDeleteDialog = new InvoiceDeleteDialog();
+        expect(await invoiceDeleteDialog.getDialogTitle())
+            .to.eq('storeApp.invoice.delete.question');
+        await invoiceDeleteDialog.clickOnConfirmButton();
 
-    expect(await invoiceComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
-  });
+        expect(await invoiceComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
+    }); */
 
   after(async () => {
     await navBarPage.autoSignOut();
