@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ustcck.store",
+      "nativeLanguage": "zh-cn"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "monolith",
+    "baseName": "store",
+    "packageName": "com.ustcck.store",
+    "packageFolder": "com/ustcck/store",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NWY5Y2Q2N2JiMTY1YjNkYjEwZmM2MzQzMjJlNTc1ZGNjYTFiOThhZjdhZGExODYyYmU0ZTk0OTg5ZWE4NTk5M2NiMjY5OWExZTg3YzgwOWI4NmU5NTg0MDFmNDkxYmJhMzVlM2JkOWJmNGQzZTQ3ZGUyYzlhOGQ4YjE5MjhiNTM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "clientFramework": "angularX",
+    "clientTheme": "pulse",
+    "clientThemeVariant": "dark",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "zh-cn",
+    "languages": ["zh-cn", "en"],
+    "blueprints": []
+  }
+}
